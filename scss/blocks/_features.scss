@@ -1,0 +1,77 @@
+.features {
+  padding-top: 75px;
+  margin-bottom: 50px;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 24px;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 40px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__element {
+    display: flex;
+    align-items: center;
+    max-width: 290px;
+  }
+
+  &__decor {
+    font-family: "HeadingNow";
+    font-size: 90px;
+    font-weight: 500;
+    line-height: 118px;
+    background: linear-gradient(180deg, #FFFFFF 22.22%, rgba(255, 255, 255, 0) 80.16%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  &__text {
+    margin-left: 8px;
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  &__warning {
+    position: relative;
+    width: 509px;
+    padding: 16px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      content: "!";
+      font-size: 37px;
+      font-weight: 700;
+      transform: translate3d(0, -50%, 0);
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      content: "!";
+      font-size: 37px;
+      font-weight: 700;
+      transform: translate3d(0, -50%, 0);
+    }
+  }
+}
