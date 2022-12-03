@@ -1,0 +1,46 @@
+.feedback {
+  display: flex;
+  justify-content: space-between;
+  &__col {
+    max-width: 511px;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(32px);
+    border-radius: 20px;
+  }
+  &__element {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    width: 100%;
+  }
+  &__title {
+    margin-bottom: 4px;
+    padding: 2px 5px;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    background: #1C1B1F;
+  }
+  &__input {
+    display: block;
+    width: 100%;
+    padding: 4px 5px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+  }
+  &__btn {
+    padding: 21px 120px;
+    margin-top: 27px;
+  }
+}
