@@ -1,0 +1,219 @@
+.example {
+  padding: 50px 0;
+}
+
+.example__examples {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 32px;
+  margin-bottom: 32px;
+}
+
+.example__element {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 48.5%;
+  padding: 24px;
+  height: 344px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 29.69%, rgba(0, 0, 0, 0.2) 57.81%, rgba(0, 0, 0, 0.7) 74.48%, #000000 100%), linear-gradient(90deg, rgba(0, 0, 0, 0.9) 53.12%, rgba(0, 0, 0, 0) 72.92%), url('../img/man.jpg');
+  background-position: center  right;
+  background-size: cover;
+  border-radius: 20px;
+}
+
+.example__title {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+.example-track {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.example-track__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(51.04deg, #0958FA 13.86%, #09FA32 93.66%);
+  cursor: pointer;
+}
+
+.example-track__item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 8px;
+  padding: 6px 8px;
+  max-width: 257px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(25px);
+  border-radius: 24px;
+
+  &_biggest {
+    max-width: 287px;
+  }
+}
+
+.benefits {
+  padding: 21px 24px;
+  margin-bottom: 32px;
+  background: linear-gradient(51.04deg, rgba(9, 88, 250, 0.05) 13.86%, rgba(9, 250, 50, 0.05) 93.66%);
+  backdrop-filter: blur(32px);
+  border-radius: 20px;
+
+  &__head {
+    margin-bottom: 19px;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 700;
+  }
+
+  &__title {
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 600;
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 140%;
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.benefits__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.benefits__element {
+  position: relative;
+  width: 100%;
+  max-width: 474px;
+  padding-left: 15px;
+  &::before {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #0B96D9;
+    border-radius: 50%;
+  }
+}
+
+.price {
+  padding: 24px 28px;
+  width: 100%;
+  max-width: 804px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+
+  &__table {
+    width: 100%;
+  }
+
+  &__title {
+    margin-right: auto;
+    font-family: "HeadingNow";
+    font-size: 32px;
+    font-weight: 500;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+  }
+
+  &__head {
+    display: flex;
+  }
+
+  &__btn {
+    margin: 0 auto;
+  }
+  
+  &__col {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    column-gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 120px;
+    height: 50px;
+    background: #000000;
+    border-radius: 10px;
+    &:empty {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+    }
+    p {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 120%;
+      text-decoration: line-through;
+      color: rgba(255, 255, 255, 0.5); 
+    }
+    b {
+      display: block;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 120%;
+      color: #fff;
+    }
+
+    &_info {
+      align-items: flex-start;
+      width: 204px;
+      height: 67px;
+      padding: 8px 12px;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 14px;
+      line-height: 120%;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      text-decoration: none;
+      b {
+        display: block;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 120%;
+        font-style: normal;
+      }
+    }
+  }
+}
