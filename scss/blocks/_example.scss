@@ -17,10 +17,38 @@
   max-width: 48.5%;
   padding: 24px;
   height: 344px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 29.69%, rgba(0, 0, 0, 0.2) 57.81%, rgba(0, 0, 0, 0.7) 74.48%, #000000 100%), linear-gradient(90deg, rgba(0, 0, 0, 0.9) 53.12%, rgba(0, 0, 0, 0) 72.92%), url('../img/man.jpg');
-  background-position: center  right;
-  background-size: cover;
+  background-color: #000;
   border-radius: 20px;
+
+  &_small {
+    height: 138px;
+  }
+
+  &:nth-child(1) {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 29.69%, rgba(0, 0, 0, 0.2) 57.81%, rgba(0, 0, 0, 0.7) 74.48%, #000000 100%), linear-gradient(90deg, rgba(0, 0, 0, 0.9) 53.12%, rgba(0, 0, 0, 0) 72.92%), url('../img/man.jpg');
+    background-position: center right -45px, center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &:nth-child(2) {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 29.69%, rgba(0, 0, 0, 0.2) 57.81%, rgba(0, 0, 0, 0.7) 74.48%, #000000 100%), linear-gradient(90deg, rgba(0, 0, 0, 0.9) 53.12%, rgba(0, 0, 0, 0) 72.92%), url('../img/women-1.jpg');
+    background-position: center right -45px, center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &:nth-child(3) {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 29.69%, rgba(0, 0, 0, 0.2) 57.81%, rgba(0, 0, 0, 0.7) 74.48%, #000000 100%), linear-gradient(90deg, rgba(0, 0, 0, 0.9) 53.12%, rgba(0, 0, 0, 0) 72.92%), url('../img/women-2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &:nth-child(4) {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 29.69%, rgba(0, 0, 0, 0.2) 57.81%, rgba(0, 0, 0, 0.7) 74.48%, #000000 100%), linear-gradient(90deg, rgba(0, 0, 0, 0.9) 53.12%, rgba(0, 0, 0, 0) 72.92%), url('../img/child.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 
 .example__title {
@@ -59,7 +87,16 @@
   border-radius: 24px;
 
   &_biggest {
+    padding: 16px 14px;
+    flex-direction: column;
+    align-items: flex-start;
     max-width: 287px;
+    .example__title {
+      margin-bottom: 16px;
+    }
+    .example-track__item {
+      width: 100%;
+    }
   }
 }
 
