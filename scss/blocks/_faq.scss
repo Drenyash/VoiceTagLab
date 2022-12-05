@@ -63,6 +63,9 @@
     line-height: 120%;
     text-decoration-line: underline;
     color: #1286FC;
+    &:hover {
+      color: #0EF0A8;
+    }
   }
 }
 

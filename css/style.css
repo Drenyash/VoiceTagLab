@@ -81,6 +81,16 @@ html {
   background: linear-gradient(51.04deg, #0958FA 13.86%, #09FA32 93.66%);
   border-radius: 60px;
   cursor: pointer;
+  transition: box-shadow 0.1s ease-in;
+}
+.btn:hover {
+  background-size: 200%;
+  -webkit-animation: background 2s infinite alternate;
+          animation: background 2s infinite alternate;
+  box-shadow: 0px 1px 20px rgba(255, 255, 255, 0.5);
+}
+.btn:active {
+  box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
 .section__title {
@@ -102,6 +112,44 @@ html {
 }
 @media screen and (max-width: 428px) {
   .btn {
+    width: 100%;
+  }
+}
+@-webkit-keyframes background {
+  0% {
+    background-position: 80% 0%;
+  }
+  50% {
+    background-position: 20% 100%;
+  }
+  100% {
+    background-position: 80% 0%;
+  }
+}
+@keyframes background {
+  0% {
+    background-position: 80% 0%;
+  }
+  50% {
+    background-position: 20% 100%;
+  }
+  100% {
+    background-position: 80% 0%;
+  }
+}
+@-webkit-keyframes fill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes fill {
+  0% {
+    width: 0%;
+  }
+  100% {
     width: 100%;
   }
 }
@@ -135,15 +183,22 @@ html {
 
 .main-nav {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   -moz-column-gap: 32px;
        column-gap: 32px;
   margin-right: 32px;
+  max-width: 412px;
 }
 .main-nav__link {
   font-size: 14px;
   line-height: 120%;
   color: #fff;
   text-decoration: none;
+  transition: color 0.2s ease-in;
+}
+.main-nav__link:hover {
+  color: #0EF0A8;
 }
 
 .user-navigation {
@@ -162,7 +217,9 @@ html {
   cursor: pointer;
   -o-border-image: linear-gradient(25deg, #0958FA, #0EF0A8) 1;
      border-image: linear-gradient(25deg, #0958FA, #0EF0A8) 1;
-  border-radius: 60px;
+}
+.user-navigation__btn:hover {
+  background: linear-gradient(25deg, #0958FA, #0EF0A8);
 }
 .user-navigation__btn_help {
   position: relative;
@@ -290,7 +347,8 @@ html {
 }
 .features__list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-wrap: wrap;
   -moz-column-gap: 20px;
        column-gap: 20px;
   width: 100%;
@@ -301,7 +359,7 @@ html {
 .features__element {
   display: flex;
   align-items: center;
-  max-width: 290px;
+  max-width: 30%;
 }
 .features__decor {
   font-family: "HeadingNow";
@@ -474,12 +532,8 @@ html {
   width: 100%;
   max-width: 48.5%;
   padding: 24px;
-  height: 344px;
   background-color: #000;
   border-radius: 20px;
-}
-.example__element_small {
-  height: 138px;
 }
 .example__element:nth-child(1) {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 29.69%, rgba(0, 0, 0, 0.2) 57.81%, rgba(0, 0, 0, 0.7) 74.48%, #000000 100%), linear-gradient(90deg, rgba(0, 0, 0, 0.9) 53.12%, rgba(0, 0, 0, 0) 72.92%), url("../img/man.jpg");
@@ -507,6 +561,7 @@ html {
 }
 
 .example__title {
+  margin-bottom: 16px;
   font-size: 18px;
   line-height: 22px;
   font-weight: 700;
@@ -516,6 +571,25 @@ html {
   display: flex;
   flex-direction: column;
   row-gap: 16px;
+  margin: 0;
+}
+.example-track__track {
+  position: relative;
+}
+.example-track__track::before {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  content: "";
+  display: block;
+  width: 0;
+  height: 30px;
+  background: linear-gradient(0deg, #0958FA, #0EF0A8);
+}
+
+.example-track__item_active .example-track__track:before {
+  -webkit-animation: fill 20s forwards;
+          animation: fill 20s forwards;
 }
 
 .example-track__button {
@@ -611,7 +685,9 @@ html {
 .price {
   padding: 24px 28px;
   width: 100%;
-  max-width: 804px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
@@ -661,6 +737,12 @@ html {
   background: #000000;
   border-radius: 10px;
 }
+.price__item input {
+  display: none;
+}
+.price__item:not(:empty) {
+  cursor: pointer;
+}
 .price__item:empty {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
@@ -678,6 +760,9 @@ html {
   font-size: 14px;
   line-height: 120%;
   color: #fff;
+}
+.price__item_active {
+  box-shadow: 1px 1px 0px 0px #0EF0A8 inset, 0px 0px 1px 1px #0958FA inset;
 }
 .price__item_info {
   align-items: flex-start;
@@ -809,6 +894,10 @@ html {
 .reviews__col:nth-child(1) .reviews__element:nth-child(4) {
   transform: rotate(-1deg);
 }
+.reviews__col:nth-child(1) .reviews__element:nth-child(4) .reviews__avatar {
+  top: auto;
+  bottom: -5px;
+}
 .reviews__col:nth-child(2) .reviews__element:nth-child(1) {
   transform: rotate(0);
 }
@@ -821,21 +910,50 @@ html {
 .reviews__col:nth-child(2) .reviews__element:nth-child(4) {
   transform: rotate(0);
 }
+.reviews__col:nth-child(2) .reviews__element:nth-child(4) .reviews__avatar {
+  top: auto;
+  bottom: -5px;
+}
+.reviews__col:nth-child(3) .reviews__element .reviews__text {
+  padding-left: 44px;
+  padding-right: 14px;
+}
 .reviews__col:nth-child(3) .reviews__element:nth-child(1) {
   transform: rotate(1deg);
+}
+.reviews__col:nth-child(3) .reviews__element:nth-child(1) .reviews__avatar {
+  top: auto;
+  right: auto;
+  left: -5px;
+  bottom: -5px;
 }
 .reviews__col:nth-child(3) .reviews__element:nth-child(2) {
   transform: rotate(0);
 }
+.reviews__col:nth-child(3) .reviews__element:nth-child(2) .reviews__avatar {
+  top: 23px;
+  right: auto;
+  left: -5px;
+}
 .reviews__col:nth-child(3) .reviews__element:nth-child(3) {
   transform: rotate(-1deg);
+}
+.reviews__col:nth-child(3) .reviews__element:nth-child(3) .reviews__avatar {
+  top: -5px;
+  right: auto;
+  left: -5px;
 }
 .reviews__col:nth-child(3) .reviews__element:nth-child(4) {
   transform: rotate(1deg);
 }
+.reviews__col:nth-child(3) .reviews__element:nth-child(4) .reviews__avatar {
+  top: 0;
+  right: auto;
+  left: -5px;
+}
 
 .reviews__text {
-  padding: 14px 27px 14px;
+  padding: 14px 29px 14px 14px;
   font-weight: 500;
   font-size: 14px;
   line-height: 120%;
@@ -936,6 +1054,9 @@ html {
           text-decoration-line: underline;
   color: #1286FC;
 }
+.faq__link:hover {
+  color: #0EF0A8;
+}
 
 @media screen and (max-width: 768px) {
   .faq {
@@ -994,6 +1115,10 @@ html {
   font-size: 16px;
   line-height: 24px;
   color: #fff;
+}
+.feedback__input:focus, .feedback__input:active {
+  background-color: #fff;
+  color: #1C1B1F;
 }
 .feedback__btn {
   padding: 21px 120px;
@@ -1058,6 +1183,10 @@ html {
   font-size: 14px;
   color: #fff;
   text-decoration: none;
+  transition: color 0.2s ease-in;
+}
+.footer__link:hover {
+  color: #0EF0A8;
 }
 
 .social {

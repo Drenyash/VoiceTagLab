@@ -15,7 +15,8 @@
 
   &__list {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
     column-gap: 20px;
     width: 100%;
     margin: 0;
@@ -26,7 +27,7 @@
   &__element {
     display: flex;
     align-items: center;
-    max-width: 290px;
+    max-width: 30%;
   }
 
   &__decor {

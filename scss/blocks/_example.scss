@@ -16,13 +16,8 @@
   width: 100%;
   max-width: 48.5%;
   padding: 24px;
-  height: 344px;
   background-color: #000;
   border-radius: 20px;
-
-  &_small {
-    height: 138px;
-  }
 
   &:nth-child(1) {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 29.69%, rgba(0, 0, 0, 0.2) 57.81%, rgba(0, 0, 0, 0.7) 74.48%, #000000 100%), linear-gradient(90deg, rgba(0, 0, 0, 0.9) 53.12%, rgba(0, 0, 0, 0) 72.92%), url('../img/man.jpg');
@@ -52,6 +47,7 @@
 }
 
 .example__title {
+  margin-bottom: 16px;
   font-size: 18px;
   line-height: 22px;
   font-weight: 700;
@@ -61,6 +57,27 @@
   display: flex;
   flex-direction: column;
   row-gap: 16px;
+  margin: 0;
+
+  &__track {
+    position: relative;
+    &::before {
+      position: absolute;
+      top: 0;
+      z-index: 0;
+      content: '';
+      display: block;
+      width: 0;
+      height: 30px;
+      background: linear-gradient(0deg, #0958FA, #0EF0A8);
+    }
+  }
+}
+
+.example-track__item_active {
+  .example-track__track:before {
+    animation: fill 20s forwards;
+  }
 }
 
 .example-track__button {
@@ -158,7 +175,7 @@
 .price {
   padding: 24px 28px;
   width: 100%;
-  max-width: 804px;
+  max-width: fit-content;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
@@ -212,6 +229,12 @@
     height: 50px;
     background: #000000;
     border-radius: 10px;
+    input {
+      display: none;
+    }
+    &:not(:empty) {
+      cursor: pointer;
+    }
     &:empty {
       background: rgba(0, 0, 0, 0.3);
       border-radius: 10px;
@@ -229,6 +252,9 @@
       font-size: 14px;
       line-height: 120%;
       color: #fff;
+    }
+    &_active {
+      box-shadow: 1px 1px 0px 0px #0EF0A8 inset, 0px 0px 1px 1px #0958FA inset;
     }
 
     &_info {

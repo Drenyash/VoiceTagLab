@@ -38,6 +38,10 @@
       }
       &:nth-child(4) {
         transform: rotate(-1deg);
+        .reviews__avatar {
+          top: auto;
+          bottom: -5px;
+        }
       }
     }
   }
@@ -55,30 +59,59 @@
       }
       &:nth-child(4) {
         transform: rotate(0);
+        .reviews__avatar {
+          top: auto;
+          bottom: -5px;
+        }
       }
     }
   }
 
   &:nth-child(3) {
     .reviews__element {
+      .reviews__text {
+        padding-left: 44px;
+        padding-right: 14px;
+      }
       &:nth-child(1) {
         transform: rotate(1deg);
+        .reviews__avatar {
+          top: auto;
+          right: auto;
+          left: -5px;
+          bottom: -5px;
+        }
       }
       &:nth-child(2) {
         transform: rotate(0);
+        .reviews__avatar {
+          top: 23px;
+          right: auto;
+          left: -5px;
+        }
       }
       &:nth-child(3) {
         transform: rotate(-1deg);
+        .reviews__avatar {
+          top: -5px;
+          right: auto;
+          left: -5px;
+        }
       }
       &:nth-child(4) {
         transform: rotate(1deg);
+        .reviews__avatar {
+          top: 0;
+          right: auto;
+          left: -5px;
+        }
       }
     }
   }
 }
 
 .reviews__text {
-  padding: 14px 27px 14px;
+  padding: 14px 29px 14px 14px;
   font-weight: 500;
   font-size: 14px;
   line-height: 120%;
