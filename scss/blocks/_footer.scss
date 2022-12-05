@@ -4,16 +4,21 @@
   background: rgba(0, 0, 0, 0.5);
 
   &__logo {
-    margin-right: 125px;
     width: 68px;
     height: 22px;
   }
 
   &__wrapper {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    margin-bottom: 45px;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    padding-top: 5px;
   }
 
   &__nav {
@@ -48,8 +53,45 @@
   column-gap: 32px;
 
   &__link {
+    font-weight: 300;
     font-size: 14px;
     line-height: 17px;
-    color: #eeee;
+    color: rgba(238, 238, 238, 0.363);
+    transition: color .2s ease-in;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .footer {
+    &__nav {
+      column-gap: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer__wrapper {
+    flex-direction: column;
+  }
+  .footer__logo {
+    margin-bottom: 40px;
+  }
+  .footer__nav {
+    flex-wrap: wrap;
+    row-gap: 32px;
+  }
+  .footer__box {
+    max-width: 210px;
+    padding-top: 0;
+    margin-bottom: 40px;
+    row-gap: 36px;
+  }
+  .policy {
+    align-items: flex-start;
+    row-gap: 24px;
+    flex-direction: column;
   }
 }

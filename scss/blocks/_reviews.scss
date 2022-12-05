@@ -14,12 +14,14 @@
   display: flex;
   flex-direction: column;
   row-gap: 14px;
+  flex-grow: 1;
+  width: 100%;
 }
 
 .reviews__element {
   position: relative;
   display: flex;
-  width: 328px;
+  max-width: 328px;
   background-color: #fff;
   border-radius: 20px;
   color: #000;
@@ -92,5 +94,34 @@
   img {
     display: block;
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .reviews {
+    padding: 30px 0;
+    &__wrapper {
+      row-gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    &__col {
+      justify-content: space-between;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    &__element {
+      max-width: 48%;
+    }
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .reviews__element {
+    max-width: 100%;
+  }
+  .reviews__col {
+    flex-direction: column;
+    flex-wrap: nowrap;
   }
 }

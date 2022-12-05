@@ -7,9 +7,11 @@ h1,h2,h3,h4,h5,h6, p {
   line-height: 120%;
 }
 
-body {
+body,
+html {
   margin: 0;
   padding: 0;
+  min-width: 428px;
 
   font-family: "Montserrat";
   font-size: 14px;
@@ -24,7 +26,9 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1130px;
+  max-width: 1170px;
+  min-width: 428px;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
@@ -46,4 +50,22 @@ body {
   font-family: "HeadingNow";
   font-weight: 500;
   font-size: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  .section__title {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .section__title {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 428px) {
+  .btn {
+    width: 100%;
+  }
 }

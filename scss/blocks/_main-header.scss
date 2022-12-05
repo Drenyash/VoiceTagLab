@@ -5,7 +5,7 @@
   background: linear-gradient(180deg, rgba(16, 20, 30, 0) 64.06%, rgba(16, 20, 30, 0.512821) 89.58%, #10141E 100%), url('../img/header-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center, center;
   z-index: 1;
 
   &__top {
@@ -106,4 +106,71 @@
   width: 373px;
   margin-bottom: 60px;
   line-height: 140%;
+}
+
+@media screen and (max-width: 992px) {
+  .main-nav {
+    column-gap: 26px;
+    margin-right: 26px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-header {
+    padding-bottom: 25px;
+    background-position: center left 90%;
+  }
+  .main-nav {
+    display: none;
+  }
+  .intro {
+    &__title {
+      margin-bottom: 16px;
+      max-width: 404px;
+      font-size: 72px;
+      font-weight: 500;
+    }
+    &__subtitle {
+      margin-bottom: 16px;
+      font-size: 18px;
+    }
+    &__text {
+      margin-bottom: 32px;
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .main-header {
+    padding-top: 16px;
+    padding-bottom: 30px;
+    background-position: top right 10%;
+    background-size: 200%;
+  }
+  .main-header__top {
+    margin-bottom: 250px;
+  }
+}
+
+@media screen and (max-width: 428px) {
+  .main-header {
+    min-width: 428px;
+    background-size: 215%;
+    background-position: right 10% top;
+    .container {
+      padding: 0;
+      width: 100%;
+    }
+  }
+  .intro {
+    padding: 0 20px;
+    &__title {
+      max-width: 100%;
+      width: 100%;
+    }
+    &__text {
+      width: 100%;
+    }
+  }
 }

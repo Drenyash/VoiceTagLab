@@ -104,7 +104,6 @@
   padding: 21px 24px;
   margin-bottom: 32px;
   background: linear-gradient(51.04deg, rgba(9, 88, 250, 0.05) 13.86%, rgba(9, 250, 50, 0.05) 93.66%);
-  backdrop-filter: blur(32px);
   border-radius: 20px;
 
   &__head {
@@ -141,7 +140,7 @@
 .benefits__element {
   position: relative;
   width: 100%;
-  max-width: 474px;
+  max-width: 48%;
   padding-left: 15px;
   &::before {
     position: absolute;
@@ -169,7 +168,7 @@
   }
 
   &__title {
-    margin-right: auto;
+    margin: 0 auto;
     font-family: "HeadingNow";
     font-size: 32px;
     font-weight: 500;
@@ -252,5 +251,79 @@
         font-style: normal;
       }
     }
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .price__title {
+    width: 33%;
+    text-align: center;
+  }
+  .price__header {
+    width: 19%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .example {
+    padding: 30px 0;
+    &__elements {
+      flex-direction: column;
+    }
+    &__element {
+      max-width: 100%;
+    }
+  }
+  .price {
+    padding: 21px 18px;
+  }
+  .price__item_info {
+    height: auto;
+  }
+  .price__title {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .benefits__list {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .benefits__element {
+    max-width: 100%;
+  }
+  .price {
+    padding: 16px 10px;
+  }
+  .price__col {
+    margin-bottom: 6px;
+    column-gap: 8px;
+  }
+  .price__item_info {
+    padding: 4px 8px;
+    max-width: 99px;
+    font-size: 12px;
+  }
+  .price__item {
+    p {
+      font-size: 10px;
+    }
+    b {
+      font-size: 12px;
+    }
+  }
+  .price__title {
+    width: 114px;
+    text-align: center;
+    font-size: 18px;
+  }
+  .price__header {
+    font-size: 12px;
+  }
+  .price__btn {
+    padding: 21px;
+    width: 100%;
+    max-width: 375px;
   }
 }
