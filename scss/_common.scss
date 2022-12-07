@@ -20,8 +20,12 @@ html {
   line-height: 120%;
 
   color: #fff;
-  
   background-color: #10141E;
+}
+
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
 }
 
 .container {

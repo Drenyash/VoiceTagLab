@@ -53,6 +53,12 @@
   font-weight: 700;
 }
 
+.example__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .example-track {
   display: flex;
   flex-direction: column;
